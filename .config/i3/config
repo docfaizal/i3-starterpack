@@ -124,20 +124,19 @@ bar {
 
 # window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 4
-assign [class=URxvt] 1
-assign [class=Firefox|Transmission-gtk] 2
-assign [class=Thunar|File-roller] 3
-assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 4
-assign [class=Audacity|Vlc|mpv|Ghb|Xfburn|Gimp*|Inkscape] 5
-assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 6
-for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
 for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
 for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
 
-# colour of border, background, text, indicator, and child_border
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
-client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background           #2f343f
+# Define colors variables:
+# bg tab mode
+set $color1     #1d2021 
+set $color2     #d65d0e
+set $color3     #fbf1c7
+set $color4     #928374
+
+# define colors for windows:
+#class                          border          bground         text            indicator       child_border
+client.focused               $color2           $color1         $color3           $color2         $color2
+client.unfocused             $color4           $color1         $color4           $color2         $color1
+client.focused_inactive      $color1           $color1         $color1           $color1         $color1
+client.urgent                $color3           $color3         $color2           $color2         $color1
